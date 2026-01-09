@@ -1,7 +1,6 @@
 # Toronto Traffic Collisions Dashboard (SQL + Power BI)
 
 ## Dashboard
-## Dashboard
 [![Toronto Collisions Dashboard](screenshots/toronto%20collisions%20dashboard.jpg)](screenshots/toronto%20collisions%20dashboard.jpg)
 
 
