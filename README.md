@@ -7,7 +7,7 @@ Analyze traffic collision patterns in Toronto by **month**, **hour**, and **poli
 
 ## Tools
 - SQL for cleaning + aggregation
-- Power BI (Service / browser) for visuals + dashboard
+- Power BI for visuals + dashboard
 
 ## What I built
 - **Monthly collisions trend** (line chart)
