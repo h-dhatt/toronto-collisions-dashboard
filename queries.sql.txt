@@ -1,0 +1,39 @@
+-- View
+DROP VIEW IF EXISTS collisions_clean;
+
+CREATE VIEW collisions_clean AS
+SELECT
+  DATE(OCC_DATE) AS occ_date,
+  CAST(OCC_YEAR  AS INT) AS occ_year,
+  CAST(OCC_MONTH AS INT) AS occ_month,
+  TRIM(OCC_DOW)  AS occ_dow,
+  CAST(OCC_HOUR  AS INT) AS occ_hour,
+  TRIM(DIVISION) AS division,
+  COALESCE(FATALITIES, 0) AS fatalities,
+  *
+FROM traffic_collisions_raw;
+
+-- A: monthly trend
+SELECT occ_year, occ_month, COUNT(*) AS collisions
+FROM collisions_clean
+GROUP BY occ_year, occ_month
+ORDER BY occ_year, occ_month;
+
+-- B: by hour
+SELECT occ_hour, COUNT(*) AS collisions
+FROM collisions_clean
+GROUP BY occ_hour
+ORDER BY occ_hour;
+
+-- C: top divisions
+SELECT division, COUNT(*) AS collisions
+FROM collisions_clean
+WHERE division IS NOT NULL AND division <> ''
+GROUP BY division
+ORDER BY collisions DESC;
+
+-- D: fatalities by division
+SELECT division, SUM(COALESCE(FATALITIES,0)) AS fatalities
+FROM collisions_clean
+GROUP BY division
+ORDER BY fatalities DESC;
