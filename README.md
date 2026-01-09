@@ -1,4 +1,4 @@
-# Toronto Traffic Collisions Dashboard (SQLite + Power BI)
+# Toronto Traffic Collisions Dashboard (SQL + Power BI)
 
 ![Dashboard](screenshots/dashboard.png)
 
@@ -6,7 +6,7 @@
 Analyze traffic collision patterns in Toronto by **month**, **hour**, and **police division**, and highlight where fatalities are most concentrated.
 
 ## Tools
-- SQLite (online) for cleaning + aggregation
+- SQL for cleaning + aggregation
 - Power BI (Service / browser) for visuals + dashboard
 
 ## What I built
@@ -21,7 +21,7 @@ Analyze traffic collision patterns in Toronto by **month**, **hour**, and **poli
 - Collision volume varies by time of day and month (see dashboard)
 
 ## How to reproduce
-1. Download the dataset as CSV and import into SQLite as a table named `traffic_collisions_raw`.
+1. Download the dataset as CSV and import into SQL as a table named `traffic_collisions_raw`.
 2. Run `sql/queries.sql` to create `collisions_clean` and generate the A–D summary tables.
 3. Export each A–D query result as CSV into the `data/` folder.
 4. Upload the CSVs to Power BI Service and recreate the visuals (then pin to a dashboard).
