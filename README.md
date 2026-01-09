@@ -1,6 +1,6 @@
 # Toronto Traffic Collisions Dashboard (SQL + Power BI)
 
-![Dashboard](screenshots/toronto collisions dashboard.jpg)
+![Dashboard](screenshots/screenshots/dashboard.jpg)
 
 ## Goal
 Analyze traffic collision patterns in Toronto by **month**, **hour**, and **police division**, and highlight where fatalities are most concentrated.
